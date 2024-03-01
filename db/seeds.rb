@@ -15,9 +15,13 @@ User.destroy_all
 
 yann = User.create(email: "yann@lewagon.org", nickname: "Yann", password: "123456")
 luc = User.create(email: "luc@lewagon.org", nickname: "Luc", password: "123456")
-chatroom = Chatroom.create(name: "general")
+pierre = User.create(email: "pierre@lewagon.org", nickname: "Pierre", password: "123456")
+yl_chatroom = Chatroom.create(name: "yann-luc")
+ChatroomUser.create(user: yann, chatroom: yl_chatroom)
+ChatroomUser.create(user: luc, chatroom: yl_chatroom)
 
-ChatroomUser.create(user: yann, chatroom: chatroom)
-ChatroomUser.create(user: luc, chatroom: chatroom)
+yp_chatroom = Chatroom.create(name: "yann-pierre")
+ChatroomUser.create(user: yann, chatroom: yp_chatroom)
+ChatroomUser.create(user: pierre, chatroom: yp_chatroom)
 
 
